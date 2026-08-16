@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: azcopy
+      settings:
+        id: Microsoft.Azure.AZCopy.10
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: awscli
+      settings:
+        id: Amazon.AWSCLI
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: ssm
+      settings:
+        id: Amazon.SessionManagerPlugin
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: kubectl
+      settings:
+        id: Kubernetes.kubectl
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: terraform
+      settings:
+        id: Hashicorp.Terraform
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: go
+      settings:
+        id: GoLang.Go
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: python
+      settings:
+        id: Python.Python.3.12
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: obsidian
+      settings:
+        id: Obsidian.Obsidian
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: drawio
+      settings:
+        id: JGraph.Draw
+        source: winget
