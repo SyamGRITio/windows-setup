@@ -25,4 +25,11 @@ if (-not (Select-String -Path $PROFILE -SimpleMatch $line -Quiet)) {
     Add-Content -Path $PROFILE -Value $line -Encoding utf8
 }
 
+# 4. Windows の個人設定
+& (Join-Path $config 'windows-settings.ps1')
+
+# 5. デスクトップに配置するもの
+Copy-Item (Join-Path $PSScriptRoot 'scripts\restart-explorer.bat') "$env:USERPROFILE\Desktop\" -Force
+
+# 終了通知
 Write-Host "done. reopen the terminal." -ForegroundColor Green
