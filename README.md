@@ -5,13 +5,16 @@
 
 ## 構成
 ```
-bootstrap.ps1                    まとめて適用する  
-config/  
-├── setup.core.winget            どの現場でも入れるもの  
-├── setup.optional.winget        現場によって選ぶもの  
-├── profile.ps1                  PowerShellプロファイル（公開）  
-├── profile.local.ps1            現場固有の設定（gitignore対象）  
-└── terminal-fragment.json       Windows Terminal の見た目  
+bootstrap.ps1                    まとめて適用する
+config/
+├── setup.core.winget            どの現場でも入れるもの
+├── setup.optional.winget        現場によって選ぶもの
+├── profile.ps1                  PowerShellプロファイル（公開）
+├── profile.local.ps1            現場固有の設定（gitignore対象）
+├── terminal-fragment.json       Windows Terminal の見た目
+└── windows-settings.ps1         エクスプローラー・タスクバー・テーマ・壁紙（単色黒）
+scripts/
+└── restart-explorer.bat         エクスプローラー再起動
 ```
 
 ## 前提
