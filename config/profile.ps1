@@ -31,6 +31,9 @@ function vs { code . }
 function c { cursor . }
 function cc { claude @args }
 
+# エクスプローラーを再起動する
+function re { Stop-Process -Name explorer -Force }
+
 ############################## git ##############################
 function gs { git status }
 function ga { git add @args }
