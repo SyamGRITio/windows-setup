@@ -1,0 +1,11 @@
+{
+    "profiles": [
+        {
+            "name": "pwsh (syam)",
+            "commandline": "pwsh.exe -NoLogo",
+            "startingDirectory": "%USERPROFILE%",
+            "colorScheme": "Ottosson",
+            "opacity": 70
+        }
+    ]
+}
