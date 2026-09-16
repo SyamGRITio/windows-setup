@@ -25,7 +25,6 @@ function prompt {
 ############################## general ##############################
 function wg { winget @args }
 function wsl { wsl.exe -d ubuntu @args }
-function docker { wsl docker @args }
 function gb { & "$env:PROGRAMFILES\Git\bin\sh.exe" --login -i }
 function vs { code . }
 function c { cursor . }
