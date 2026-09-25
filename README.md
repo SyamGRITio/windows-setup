@@ -17,6 +17,8 @@ scripts/
 └── restart-explorer.bat         エクスプローラー再起動
 ```
 
+![bootstrap.ps1 がやること](images/bootstrap-flow.svg)
+
 ## 前提
 - Windows 10 1809 以降 / Windows 11
 - winget（アプリ インストーラー）が使えること

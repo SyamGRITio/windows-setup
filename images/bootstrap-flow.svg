@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="1000" height="620" font-family="Yu Gothic UI, Yu Gothic, Meiryo, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker>
+  </defs>
+  <rect width="1000" height="620" fill="#fff"/>
+  <text x="20" y="30" font-size="20" font-weight="bold" fill="#222">bootstrap.ps1 がやること（上から順に）</text>
+  <text x="20" y="52" font-size="12" fill="#555">左 = このリポジトリのファイル、右 = PC のどこが変わるか</text>
+
+  <rect x="20" y="66" width="220" height="50" rx="8" fill="#eaf3fc" stroke="#1d6fb8" stroke-width="2"/>
+  <text x="130" y="96" font-size="15" font-weight="bold" text-anchor="middle" fill="#123">.\bootstrap.ps1</text>
+  <text x="252" y="88" font-size="12" fill="#333">-IncludeOptional を付けると ① で optional も入れる</text>
+
+  <g font-size="12" fill="#333">
+    <!-- 1 -->
+    <rect x="20" y="136" width="380" height="72" rx="8" fill="#fff" stroke="#555"/>
+    <text x="34" y="160" font-size="13" font-weight="bold" fill="#222">① アプリを入れる（winget configure）</text>
+    <text x="34" y="180">config/setup.core.winget … どの現場でも入れるもの</text>
+    <text x="34" y="198">config/setup.optional.winget … 現場で選ぶもの</text>
+    <rect x="600" y="136" width="380" height="72" rx="8" fill="#f6f8fa" stroke="#999"/>
+    <text x="614" y="164">アプリがインストールされる</text>
+    <text x="614" y="184">（Git・PowerShell 7・VS Code など）</text>
+
+    <!-- 2 -->
+    <rect x="20" y="224" width="380" height="60" rx="8" fill="#fff" stroke="#555"/>
+    <text x="34" y="248" font-size="13" font-weight="bold" fill="#222">② ターミナルの見た目</text>
+    <text x="34" y="268">config/terminal-fragment.json</text>
+    <rect x="600" y="224" width="380" height="60" rx="8" fill="#f6f8fa" stroke="#999"/>
+    <text x="614" y="248">%LOCALAPPDATA%\Microsoft\Windows Terminal\</text>
+    <text x="614" y="268">Fragments\syam\settings.json にコピー（上書きしない重ね方）</text>
+
+    <!-- 3 -->
+    <rect x="20" y="300" width="380" height="120" rx="8" fill="#fff" stroke="#555"/>
+    <text x="34" y="324" font-size="13" font-weight="bold" fill="#222">③ PowerShell の設定</text>
+    <text x="34" y="344">config/profile.ps1（公開・共通の関数や短縮コマンド）</text>
+    <text x="46" y="364">└ 最後に profile.local.ps1 があれば読む</text>
+    <text x="34" y="386">config/profile.local.ps1（Git に入らない）</text>
+    <text x="46" y="406" fill="#666">現場ごとの設定。認証情報は書かない</text>
+    <rect x="600" y="300" width="380" height="120" rx="8" fill="#f6f8fa" stroke="#999"/>
+    <text x="614" y="328">$PROFILE（PowerShell 起動時に読むファイル）に</text>
+    <text x="614" y="348">「config/profile.ps1 を読む」1行を足す</text>
+    <text x="614" y="368">（すでにあれば足さない）</text>
+    <text x="614" y="398" fill="#666">→ 次に PowerShell を開くと反映</text>
+
+    <!-- 4 -->
+    <rect x="20" y="436" width="380" height="60" rx="8" fill="#fff" stroke="#555"/>
+    <text x="34" y="460" font-size="13" font-weight="bold" fill="#222">④ Windows の個人設定</text>
+    <text x="34" y="480">config/windows-settings.ps1</text>
+    <rect x="600" y="436" width="380" height="60" rx="8" fill="#f6f8fa" stroke="#999"/>
+    <text x="614" y="460">レジストリ（HKCU だけ）: 拡張子表示・タスクバー</text>
+    <text x="614" y="480">左寄せ・ダークモード・背景 → エクスプローラー再起動</text>
+
+    <!-- 5 -->
+    <rect x="20" y="512" width="380" height="60" rx="8" fill="#fff" stroke="#555"/>
+    <text x="34" y="536" font-size="13" font-weight="bold" fill="#222">⑤ 復旧用のボタン</text>
+    <text x="34" y="556">scripts/restart-explorer.bat</text>
+    <rect x="600" y="512" width="380" height="60" rx="8" fill="#f6f8fa" stroke="#999"/>
+    <text x="614" y="536">デスクトップにコピー（エクスプローラーが</text>
+    <text x="614" y="556">おかしくなったらダブルクリック）</text>
+  </g>
+
+  <g stroke="#444" stroke-width="2" marker-end="url(#a)">
+    <line x1="400" y1="172" x2="598" y2="172"/>
+    <line x1="400" y1="254" x2="598" y2="254"/>
+    <line x1="400" y1="360" x2="598" y2="360"/>
+    <line x1="400" y1="466" x2="598" y2="466"/>
+    <line x1="400" y1="542" x2="598" y2="542"/>
+  </g>
+  <g stroke="#1d6fb8" stroke-width="2" fill="none" marker-end="url(#a)">
+    <line x1="130" y1="116" x2="130" y2="134"/>
+  </g>
+
+  <text x="20" y="600" font-size="12" fill="#666">公開してよいもの（共通の設定）はリポジトリに、現場ごとのもの（アカウント名など）は Git に入らない profile.local.ps1 に分けている。</text>
+</svg>
